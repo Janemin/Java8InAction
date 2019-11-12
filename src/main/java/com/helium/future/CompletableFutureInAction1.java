@@ -24,13 +24,15 @@ public class CompletableFutureInAction1 {
         });
     }
 
-    private static double get() {
+    public static double get() {
         try {
             Thread.sleep(RANDOM.nextInt(10000));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return RANDOM.nextDouble();
+        double result = RANDOM.nextDouble();
+        System.out.println(result);
+        return result;
     }
 
 }

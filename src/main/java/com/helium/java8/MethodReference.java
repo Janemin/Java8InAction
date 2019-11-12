@@ -25,10 +25,10 @@ public class MethodReference {
 
         userConsumer(System.out::println, "TEST");
 
-        List<Apple> apples = Arrays.asList(new Apple(140, GREEN),
-                new Apple(120, RED),
-                new Apple(135, YELLOW),
-                new Apple(170, GREEN));
+        List<Apple> apples = Arrays.asList(new Apple(GREEN, 140),
+                new Apple(RED, 120),
+                new Apple(YELLOW, 135),
+                new Apple(GREEN, 170));
 
         apples.sort((a1, a2) -> - Long.compare(a1.getWeight(), a2.getWeight()));
         System.out.println(apples);
@@ -51,7 +51,7 @@ public class MethodReference {
         Supplier<String> strMaker = String::new;
         strMaker.get();
 
-        BiFunction<Long, FruitsColor, Apple> applePicker = Apple::new;
-        applePicker.apply(100L, FruitsColor.RED);
+        BiFunction<FruitsColor, Long, Apple> applePicker = Apple::new;
+        applePicker.apply(FruitsColor.RED, 100L);
     }
 }

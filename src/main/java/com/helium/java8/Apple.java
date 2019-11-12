@@ -12,8 +12,10 @@ import lombok.*;
 @ToString
 public class Apple {
 
+    private FruitsColor color;
+
     private long weight;
 
-    private FruitsColor color;
+
 
 }
